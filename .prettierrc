@@ -1,0 +1,9 @@
+{
+  "printWidth": 100,
+  "endOfLine": "lf",
+  "indentStyle": "space",
+  "useTabs": false,
+  "bracketSameLine": false,
+  "singleQuote": true,
+  "trailingComma": "all"
+}
