@@ -30,7 +30,7 @@ class ServiceClient {
 
   public static getInstance(): ServiceClient {
     if (!ServiceClient.instance) {
-      ServiceClient.instance = new ServiceClient(CLIENT_SERVICES.PAYMENT);
+      ServiceClient.instance = new ServiceClient(CLIENT_SERVICES.BASE);
     }
 
     return ServiceClient.instance;

@@ -1,5 +1,6 @@
 export const CLIENT_SERVICES = {
-  PAYMENT: 'api.example.com',
+  BASE: 'api.example.com',
+  PAYMENT: '/payment',
 };
 
 export enum CLIENT_METHOD {
