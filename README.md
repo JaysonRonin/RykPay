@@ -1,50 +1,57 @@
-# Welcome to your Expo app 👋
+# Welcome to RykPay app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A secure payment transfer module for a digital banking app, built with React Native (Expo) & TypeScript, integrating biometric authentication for secure transactions.
+
+## Requirements
+Payment Transfer Interface
+- [ ] Ui input recipient, amount, and notes.
+- [ ] Real-time balance check before transaction.
+- [ ] Error messages for invalid inputs.
+
+Biometric Authentication
+- [ ] Face ID / Touch ID / Fingerprint authentication before transaction.
+- [ ] Fallback to PIN/password for devices without biometrics.
+
+Transaction Processing
+- [ ] API integration for fund transfers.
+- [ ] Error handling for network issues, insufficient funds.
+- [ ] Show confirmation screen after successful transactions.
+
+## 🚀 Tech Stack
+- React Native (Expo)
+- TypeScript
+- Expo Local Authentication (Biometrics)
+- Zustand (State Management)
+- React Query (API Caching)
+- Axios (API Requests)
+- React Navigation (App Navigation)
+
+## Folder structure
+```📦 RykPay  
+ ┣ 📂 src  
+ ┃ ┣ 📂 app  
+ ┃ ┣  ┣ 📂 index.tsx
+ ┃ ┣ 📂 components  
+ ┃ ┣ 📂 screens  
+ ┃ ┣ 📂 hooks  
+ ┃ ┣ 📂 api  
+ ┃ ┣ 📂 store  
+ ┃ ┣ 📂 utils  
+ ┣ 📜 package.json  
+ ┣ 📜 README.md
+ ```
+
 
 ## Get started
 
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn
    ```
 
 2. Start the app
 
    ```bash
-    npx expo start
+    yarn start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
