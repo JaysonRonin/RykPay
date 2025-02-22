@@ -64,21 +64,13 @@ class ServiceClient {
     const instance = axios.create(this.defaultConfig);
 
     instance.interceptors.request.use(
-      (config) => {
-        return config;
-      },
-      (error) => {
-        return Promise.reject(error);
-      },
+      (config) => config,
+      (error) => Promise.reject(error),
     );
 
     instance.interceptors.response.use(
-      (response: AxiosResponse<ClientResponse<unknown>>) => {
-        return response;
-      },
-      (error: AxiosError) => {
-        return Promise.reject(error);
-      },
+      (response: AxiosResponse<ClientResponse<unknown>>) => response,
+      (error: AxiosError) => Promise.reject(error),
     );
 
     return instance;
