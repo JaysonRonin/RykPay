@@ -40,7 +40,8 @@
       "typedRoutes": true
     },
     "expo": {
-      "newArchEnabled": true
+      "newArchEnabled": true,
+      "entryPoint": "./src/app/MainApp.tsx"
     }
   }
 }
