@@ -63,8 +63,14 @@ Transaction Processing
    ```
 
 ## Video Examples
-
+### Normal behaviour
 |    **Android**    |                           **iOS**                           |
 | :---------------: | :---------------------------------------------------------: |
 | https://github.com/user-attachments/assets/2d40d38b-deee-474d-9057-d19c0eec482a | https://github.com/user-attachments/assets/1c45b559-274f-42de-91f1-b472b752f1f7 |
-| Text3 <br/> Text4 | ![stats-two](https://github-readme-stats.vercel.app/api?... |
+
+
+### HTTP fail behaviour
+|    **Android**    |                           **iOS**                           |
+| :---------------: | :---------------------------------------------------------: |
+| https://github.com/user-attachments/assets/92223e6b-a391-40b5-807d-c2bcf15b9d63 | https://github.com/user-attachments/assets/92d6af7f-38f0-4dee-bd8c-f9d5b14611f9 |
+
