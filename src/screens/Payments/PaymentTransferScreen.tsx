@@ -25,7 +25,7 @@ export default function PaymentTransferScreen({
   const [isNotesError, setNotesError] = useState<boolean>(false);
   const [appLoading, setAppLoading] = useState<boolean>(false);
   const { authenticate } = useAuth();
-  const { balance, transfer } = useWalletStore();
+  const { balance } = useWalletStore();
 
   const [errors, setErrors] = useState<{ recipient?: string; amount?: string; notes?: string }>({});
 
@@ -41,16 +41,18 @@ export default function PaymentTransferScreen({
       const result = await Services.payment.transferFunds({
         amount: parseFloat(amount),
         recipient,
+        notes,
       });
       setAppLoading(false);
+      navigation.navigate(RouteKeys.PAYMENTS_CONFIRMATION, { result });
       return result;
-    } catch (error) {
+    } catch (error: Error) {
       const err = error.message ?? '';
       navigation.navigate(RouteKeys.PAYMENTS_FAILED, { error: err });
     }
     setAppLoading(false);
     return null;
-  }, []);
+  }, [amount, authenticate, navigation, recipient]);
 
   const preValidate = useCallback(() => {
     const parsedAmount = parseFloat(amount);
@@ -124,7 +126,7 @@ export default function PaymentTransferScreen({
             value={recipient}
             onChangeText={setRecipient}
             error={isRecipientError}
-            errorText="Invalid Recipient"
+            errorText={errors.recipient}
           />
           <InputField
             key="payment-transfer-input-Amount"
@@ -133,7 +135,7 @@ export default function PaymentTransferScreen({
             value={amount}
             onChangeText={setAmount}
             error={isAmountError}
-            errorText="Insufficient credit available, Please check again."
+            errorText={errors.amount}
             keyboardType="numeric"
           />
           <InputField
@@ -143,7 +145,7 @@ export default function PaymentTransferScreen({
             value={notes}
             onChangeText={setNotes}
             error={isNotesError}
-            errorText="Invalid Notes"
+            errorText={errors.notes}
           />
           <Divider variant="GAP_1" />
           {transferButton}
