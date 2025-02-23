@@ -72,7 +72,7 @@ export default function TabNavigator(): React.JSX.Element {
         <IconSymbol size={22} color={buttonColor} name="chevron.left.forwardslash.chevron.right" />
       );
     },
-    [],
+    [activeColor, deactivateColor],
   );
 
   const paymentScreenOptions = useMemo(
@@ -81,7 +81,7 @@ export default function TabNavigator(): React.JSX.Element {
       tabBarIcon: ({ focused }: { focused: boolean; color?: string; size?: number }) =>
         generateTabIcon(focused, 'Payments'),
     }),
-    [],
+    [generateTabIcon],
   );
 
   return (
