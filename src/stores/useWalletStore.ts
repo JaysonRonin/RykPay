@@ -1,3 +1,4 @@
+import { randStr } from '@/utils/randStr';
 import { create } from 'zustand';
 
 export type Transaction = {
@@ -5,7 +6,7 @@ export type Transaction = {
   type: 'deposit' | 'transfer';
   amount: number;
   recipient?: string;
-  timestamp: string;
+  createdAt: string;
 };
 
 export type WalletState = {
@@ -26,10 +27,10 @@ export const useWalletStore = create<WalletState>((set) => ({
       transactions: [
         ...state.transactions,
         {
-          id: crypto.randomUUID(),
+          id: randStr(''),
           type: 'deposit',
           amount,
-          timestamp: new Date().toISOString(),
+          createdAt: new Date().toISOString(),
         },
       ],
     })),
@@ -42,11 +43,11 @@ export const useWalletStore = create<WalletState>((set) => ({
           transactions: [
             ...state.transactions,
             {
-              id: crypto.randomUUID(),
+              id: randStr(''),
               type: 'transfer',
               amount,
               recipient,
-              timestamp: new Date().toISOString(),
+              createdAt: new Date().toISOString(),
             },
           ],
         };
