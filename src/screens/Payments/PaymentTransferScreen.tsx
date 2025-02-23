@@ -47,14 +47,17 @@ export default function PaymentTransferScreen({
       setAppLoading(false);
       navigation.navigate(RouteKeys.PAYMENTS_CONFIRMATION, { result });
       transfer(parseFloat(amount), recipient);
+      cleanField();
       return result;
     } catch (error: Error) {
       const err = error.message ?? '';
+      cleanField();
       navigation.navigate(RouteKeys.PAYMENTS_FAILED, { error: err });
     }
     setAppLoading(false);
+    cleanField();
     return null;
-  }, [amount, authenticate, navigation, recipient]);
+  }, [amount, authenticate, navigation, notes, recipient, transfer]);
 
   const preValidate = useCallback(() => {
     const parsedAmount = parseFloat(amount);
@@ -115,6 +118,12 @@ export default function PaymentTransferScreen({
     ),
     [appLoading, preValidate],
   );
+
+  const cleanField = () => {
+    setRecipient('');
+    setAmount('');
+    setNotes('');
+  };
 
   return (
     <SafeAreaView edges={['top']}>
