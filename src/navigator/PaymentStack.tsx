@@ -1,5 +1,6 @@
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { Header } from '@/components/ui/Header';
 import { Colors } from '@/constants';
+import PaymentErrorScreen from '@/screens/Payments/PaymentErrorScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import PaymentTransferScreen from '../screens/Payments/PaymentTransferScreen';
 import RouteKeys from './RouteKeys';
@@ -15,11 +16,25 @@ export default function PaymentStack() {
         component={PaymentTransferScreen}
         options={{
           title: 'Transfer',
-          headerLeft: () => (
-            <IconSymbol name="left.circle" size={24} color={Colors.light.primary} />
-          ),
           headerShown: true,
           headerTransparent: true,
+          headerTitle: Header,
+        }}
+      />
+      <Stack.Screen
+        name={RouteKeys.PAYMENTS_FAILED}
+        component={PaymentErrorScreen}
+        options={{
+          headerShown: false,
+          headerTransparent: false,
+          presentation: 'modal',
+          headerBackTitleStyle: {
+            color: Colors.light.primary,
+          },
+          headerStyle: {
+            color: Colors.light.primary,
+          },
+          headerTitle: Header,
         }}
       />
     </Stack.Navigator>
