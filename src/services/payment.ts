@@ -5,14 +5,17 @@ const payment = {
   async transferFunds<T>({
     amount,
     recipient,
+    notes,
   }: {
     amount: number;
     recipient: string;
+    notes: string;
   }): Promise<T | Error> {
     try {
       const body = {
         amount: JSON.stringify(amount),
         recipient,
+        notes,
       };
       const response = await ServiceClient.getInstance().authFetch<T>({
         method: CLIENT_METHOD.POST,
