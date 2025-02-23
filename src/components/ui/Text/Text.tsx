@@ -1,5 +1,5 @@
 import { Colors } from '@/constants';
-import React from 'react';
+import React, { memo } from 'react';
 import {
   Text as RNText,
   type TextProps as RNTextProps,
@@ -23,7 +23,7 @@ type SubVariantKeys<T extends TypographyKeys> = keyof (typeof TYPOGRAPHY)[T];
 
 type TextProps = TextOwnProps & RNTextProps;
 
-export default function Text({
+function Text({
   color = Colors.light.dark,
   variant,
   children,
@@ -45,3 +45,5 @@ export default function Text({
     </RNText>
   );
 }
+
+export default memo(Text);
