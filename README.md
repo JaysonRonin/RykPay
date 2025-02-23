@@ -66,5 +66,5 @@ Transaction Processing
 
 |    **Android**    |                           **iOS**                           |
 | :---------------: | :---------------------------------------------------------: |
-| Text1 <br/> Text2 | ![stats-one](https://github-readme-stats.vercel.app/api?... |
+| https://github.com/user-attachments/assets/2d40d38b-deee-474d-9057-d19c0eec482a | https://github.com/user-attachments/assets/1c45b559-274f-42de-91f1-b472b752f1f7 |
 | Text3 <br/> Text4 | ![stats-two](https://github-readme-stats.vercel.app/api?... |
