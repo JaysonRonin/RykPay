@@ -1,9 +1,9 @@
 import { Colors } from '@/constants';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 
-export default function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
     <View style={styles.tabBarLayout}>
       {state.routes.map((route, index) => {
@@ -56,6 +56,8 @@ export default function TabBar({ state, descriptors, navigation }: BottomTabBarP
     </View>
   );
 }
+
+export default memo(TabBar);
 
 const styles = StyleSheet.create({
   tabBarLayout: {
