@@ -13,6 +13,7 @@ import { Button, Spinner } from '@ui-kitten/components';
 import { useCallback, useMemo, useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Text from '@/components/ui/Text/Text';
 
 export default function PaymentTransferScreen({
   navigation,
@@ -25,7 +26,7 @@ export default function PaymentTransferScreen({
   const [isNotesError, setNotesError] = useState<boolean>(false);
   const [appLoading, setAppLoading] = useState<boolean>(false);
   const { authenticate } = useAuth();
-  const { balance } = useWalletStore();
+  const { balance, transfer } = useWalletStore();
 
   const [errors, setErrors] = useState<{ recipient?: string; amount?: string; notes?: string }>({});
 
@@ -45,6 +46,7 @@ export default function PaymentTransferScreen({
       });
       setAppLoading(false);
       navigation.navigate(RouteKeys.PAYMENTS_CONFIRMATION, { result });
+      transfer(parseFloat(amount), recipient);
       return result;
     } catch (error: Error) {
       const err = error.message ?? '';
@@ -118,7 +120,9 @@ export default function PaymentTransferScreen({
     <SafeAreaView edges={['top']}>
       <KeyboardAwareScrollView bottomOffset={62} contentContainerStyle={styles.container}>
         <View>
-          {/* {inputList()} */}
+          <Text variant="BODY.SEMI_BOLD">Current Balance</Text>
+          <Text variant="H1.SEMI_BOLD">RM {balance}</Text>
+          <Divider variant="GAP_1" />
           <InputField
             key="payment-transfer-input-recipient"
             variant="TEXT"
