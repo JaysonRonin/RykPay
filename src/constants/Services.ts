@@ -1,6 +1,6 @@
 export const CLIENT_SERVICES = {
-  BASE: 'api.example.com',
-  PAYMENT: '/payment',
+  BASE: 'https://67b942aa51192bd378dcf42f.mockapi.io/',
+  PAYMENT: '/payment/v1',
 };
 
 export enum CLIENT_METHOD {
