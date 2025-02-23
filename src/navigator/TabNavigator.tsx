@@ -1,4 +1,4 @@
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { IconSymbol } from '@/components/ui/icon/IconSymbol';
 import TabBar from '@/components/ui/TabBar/TabBar';
 import TYPOGRAPHY from '@/components/ui/Typography/Typography';
 import { useThemeColor } from '@/hooks/useThemeColor';
@@ -95,11 +95,6 @@ export default function TabNavigator(): React.JSX.Element {
         }}
       >
         {/* <Tab.Screen name={RouteKeys.HOME_TAB} component={HomeStack} options={homeScreenOptions} /> */}
-        {/* <Tab.Screen
-          name={RouteKeys.ACCOUNTS}
-          component={AccountScreen}
-          options={accountScreenOptions}
-        /> */}
         <Tab.Screen
           name={RouteKeys.PAYMENTS_TAB}
           component={PaymentStack}
