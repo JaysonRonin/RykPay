@@ -17,14 +17,18 @@ export default Divider;
 const styles = StyleSheet.create({
   GAP_1: {
     height: 10,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   GAP_3: {
     height: 20,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   GAP_6: {
     height: 30,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   GAP_9: {
     height: 40,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
 });
