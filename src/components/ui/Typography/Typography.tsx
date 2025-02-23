@@ -13,7 +13,11 @@ export type TextVariant =
   | 'BODY.REGULAR'
   | 'BODY.Medium'
   | 'BODY.SEMI_BOLD'
-  | 'BODY.BOLD';
+  | 'BODY.BOLD'
+  | 'CAPTION.REGULAR'
+  | 'CAPTION.Medium'
+  | 'CAPTION.SEMI_BOLD'
+  | 'CAPTION.BOLD';
 
 const TYPOGRAPHY = {
   H1: StyleSheet.create({
@@ -80,6 +84,28 @@ const TYPOGRAPHY = {
       fontFamily: fonts.bold,
       lineHeight: 24,
       fontSize: 16,
+    },
+  }),
+  CAPTION: StyleSheet.create({
+    REGULAR: {
+      fontFamily: fonts.regular,
+      lineHeight: 18,
+      fontSize: 12,
+    },
+    Medium: {
+      fontFamily: fonts.medium,
+      lineHeight: 18,
+      fontSize: 12,
+    },
+    SEMI_BOLD: {
+      fontFamily: fonts.semiBold,
+      lineHeight: 18,
+      fontSize: 12,
+    },
+    BOLD: {
+      fontFamily: fonts.bold,
+      lineHeight: 18,
+      fontSize: 12,
     },
   }),
 };
